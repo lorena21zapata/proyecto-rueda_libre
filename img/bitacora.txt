@@ -1,0 +1,16 @@
+
+file:///home/cohorte8/Modulo-HTML-CSS/rueda-libre/index.html
+petición:
+Name: index.html
+Status: 200
+Type: document
+
+Ruta erronea:
+Failed to Load Page
+ERR_UNEXPECTED (-9)
+URL: file:///home/cohorte8/Modulo-HTML-CSS/rueda-libre/promociones.html
+
+Rol de HTML,CSS y JavaScript:
+Html será la estructura de la página
+Css permitirá gestionar y crear toda la apariencia de la página
+JavaScript permitirá crear las interaciones que los usuarios tendran en la página

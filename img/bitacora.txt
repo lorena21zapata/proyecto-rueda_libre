@@ -14,3 +14,12 @@ Rol de HTML,CSS y JavaScript:
 Html será la estructura de la página
 Css permitirá gestionar y crear toda la apariencia de la página
 JavaScript permitirá crear las interaciones que los usuarios tendran en la página
+
+Tabla de rutas:
+<section>
+        <h3>Menú del sito</h3>
+        <p><a href="index.html">Inicio</a></p>
+        <p><a href="paginas/tarifas.html">Tarifas y rutas</a></p>
+        <p><a href="paginas/reservas.html">Reservas</a></p>
+    </section>
+    <section>

@@ -1,25 +1,207 @@
 
-file:///home/cohorte8/Modulo-HTML-CSS/rueda-libre/index.html
-petición:
-Name: index.html
-Status: 200
-Type: document
+1. Día 1| MiniReto 1| Punto 4
+    file:///home/cohorte8/Modulo-HTML-CSS/rueda-libre/index.html
+    petición:
+    Name: index.html
+    Status: 200
+    Type: document
 
-Ruta erronea:
-Failed to Load Page
-ERR_UNEXPECTED (-9)
-URL: file:///home/cohorte8/Modulo-HTML-CSS/rueda-libre/promociones.html
+2. Día 1| MiniReto 1| Punto 5
+    Ruta erronea:
+    Failed to Load Page
+    ERR_UNEXPECTED (-9)
+    URL: file:///home/cohorte8/Modulo-HTML-CSS/rueda-libre/promociones.html
 
-Rol de HTML,CSS y JavaScript:
-Html será la estructura de la página
-Css permitirá gestionar y crear toda la apariencia de la página
-JavaScript permitirá crear las interaciones que los usuarios tendran en la página
+3. Día 1| MiniReto 1| Punto 6
+    Rol de HTML,CSS y JavaScript:
+    Html será la estructura de la página
+    Css permitirá gestionar y crear toda la apariencia de la página
+    JavaScript permitirá crear las interaciones que los usuarios tendran en la página
 
-Tabla de rutas:
-<section>
-        <h3>Menú del sito</h3>
-        <p><a href="index.html">Inicio</a></p>
-        <p><a href="paginas/tarifas.html">Tarifas y rutas</a></p>
-        <p><a href="paginas/reservas.html">Reservas</a></p>
-    </section>
-    <section>
+4. Día 1| MiniReto 4| Punto 6
+    Archivo de origen	    Destino	                Ruta escrita
+    index.html	            tarifas.html	        tarifas.html
+    index.html	            paginas/reservas.html	paginas/reservas.html
+    tarifas.html	        index.html	            index.html
+    tarifas.html	        paginas/reservas.html	paginas/reservas.html
+    paginas/reservas.html	index.html	            ../index.html
+    paginas/reservas.html	tarifas.html	        ../tarifas.html
+
+5. Día 2| MiniReto 5| Punto 1
+    Página de inicio (index.html)
+
+        Header: contiene el nombre del negocio y el menú de navegación principal.
+
+        Nav: agrupa los enlaces hacia Inicio, Tarifas y Reservas.
+
+        Main: contiene el contenido principal de la página.
+
+        Section: agrupa los bloques temáticos de la página, como la presentación del negocio y sus servicios.
+
+        Article: se utilizará para representar cada servicio cuando tenga contenido independiente y sentido por sí mismo.
+
+        Footer: contiene el nombre del negocio, el correo electrónico de contacto y el año.
+
+    Página de tarifas (tarifas.html)
+
+        Header: contiene el nombre del negocio y el menú de navegación principal.
+
+        Nav: permite acceder a las tres páginas del sitio.
+
+        Main: contiene la información principal sobre las tarifas y los recorridos.
+
+        Section: agrupa la tabla de recorridos y tarifas.
+
+        Aside: contiene información complementaria relacionada con las tarifas, cuando corresponda.
+
+        Footer: contiene el nombre del negocio, el correo electrónico de contacto y el año.
+
+    Página de reservas (paginas/reservas.html)
+
+        Header: contiene el nombre del negocio y el menú de navegación principal.
+
+        Nav: permite acceder a Inicio, Tarifas y Reservas.
+
+        Main: contiene el formulario de reserva y la información necesaria para realizarla.
+
+        Section: organiza el formulario de reserva y el horario de atención en bloques temáticos diferenciados.
+
+        Aside: puede utilizarse para presentar información complementaria sobre el horario de atención, si su función es secundaria respecto al contenido principal.
+
+        Footer: contiene el nombre del negocio, el correo electrónico de contacto y el año.
+
+    2. Decisiones sobre la estructura semántica
+
+        La estructura del sitio se organizó utilizando elementos semánticos de HTML, como header, nav, main, section y footer, con el propósito de identificar la función de cada región.
+
+        Se utilizaron elementos section para agrupar contenido relacionado temáticamente. Se revisará que cada sección cuente con un encabezado descriptivo y que los elementos article se utilicen únicamente cuando el contenido tenga sentido independiente.
+
+        No se utilizaron elementos div para organizar los bloques temáticos. Si se conserva algún elemento div o span, su uso deberá justificarse cuando cumpla una función de agrupación o presentación para la que no exista un elemento semántico más apropiado.
+
+6. Día 2| MiniReto 5| Punto 5
+    No se implementó ningún <div> o <span>
+
+7. Día 2| MiniReto 6| Punto 1
+    1. Correo electrónico — campo de tipo email
+
+        Se seleccionó el control input type="email" porque permite introducir una dirección de correo electrónico y realizar una validación básica del formato. Además, su etiqueta visible permite identificar claramente la información solicitada.
+
+    2. Tipo de bicicleta — lista desplegable
+
+        Se seleccionó el control select porque el cliente debe elegir una opción entre varios tipos de bicicleta disponibles. Este control organiza las alternativas en un espacio reducido y evita que el usuario tenga que escribir manualmente el nombre del tipo de bicicleta.
+
+    3. Aceptación de las condiciones — casilla de verificación
+
+     Se seleccionó el control input type="checkbox" porque permite expresar una decisión afirmativa o negativa, en este caso, aceptar las condiciones del alquiler. La casilla se asociará con una etiqueta visible para que el usuario pueda activarla haciendo clic en el texto.
+
+    Etiquetas y envío de datos
+
+        Cada control tendrá una etiqueta visible asociada mediante los atributos for e id. Asimismo, se asignará un atributo name a cada campo para identificar los datos enviados por el formulario.
+
+        El formulario utilizará method="post" y tendrá un botón de envío al final. Se comprobará que los controles puedan activarse mediante sus etiquetas y que la estructura HTML sea válida.
+
+    Verificaciones
+
+        El formulario se encuentra dentro de una sección del elemento main.
+
+        Los campos están organizados en los tres grupos solicitados.
+
+        Cada control tiene una etiqueta visible y un atributo name.
+
+        El botón de envío está ubicado al final del formulario.
+
+        Se verifica la asociación entre las etiquetas y sus controles.
+
+        Se realizan las pruebas correspondientes y se registran los cambios mediante commit y push.
+    
+8. Día 2| MiniReto 7| Punto 3
+    Casos de prueba
+    N.º Campo               Dato de prueba          Resultado esperado                                Resultado obtenido
+
+    1   Nombre completo     Campo vacío             El navegador bloquea el envío porque el           La validación impide el envío y solicita completar el campo.
+                                                    campo es obligatorio (required). 
+
+    2   Nombre completo     Un solo carácter (A)    El navegador impide el envío si el campo          El navegador indica que el texto no alcanza la longitud mínima.
+                                                    tiene minlength="3". 
+
+    3 Nombre completo       Texto de más de 60      El campo limita la entrada a 60 caracteres        No es posible introducir más de 60 caracteres en el campo.
+                            caracteres                        mediante maxlength="60". 
+                            
+
+    4 Correo electrónico    correo-invalido         El navegador impide el envío porque el correo     La validación del tipo email rechaza el formato introducido.
+                                                    no tiene un formato válido. 
+
+    5 Fecha de reserva      Fecha anterior          El navegador impide el envío si la fecha          El navegador señala que la fecha seleccionada no cumple el límite mínimo.
+                            al mínimo configurado                        incumple el atributo min. 
+                            
+
+    6 Tipo de bicicleta     Opción inicial          El navegador impide el envío porque no se ha     La validación required solicita seleccionar una bicicleta.
+                                                    seleccionado una opción válida.                   
+    sin valor 
+
+    7 Aceptación de         Casilla sin marcar      El navegador impide el envío porque la casilla   La validación solicita marcar la casilla antes de continuar.
+    es obligatoria. 
+    condiciones 
+
+    8 Teléfono              Valor con letras,       El navegador impide el envío si el campo tiene   La validación del patrón rechaza el valor introducido.
+                            por ejemplo abc123defg  un patrón que admite únicamente diez dígitos. 
+
+9. Día 2| MiniReto 8| Punto 2   
+    Se hizo la corrección del texto alternativo de las imagenes decorativas del Index
+    En cada página se organizaron las etiquetas h 
+
+10. Día 2| MiniReto 8| Punto 3
+Combinación	Texto	            Fondo           Ratio
+1	        Blanco #FFFFFF	   Verde Ruta      5.31:1
+2	        Blanco #FFFFFF	   Naranja Pedal   2.21:1
+3	        Azul Noche	        Naranja Pedal   7.2:1
+4	        Azul Noche	        Crema           14.82:1
+5	        Gris Asfalto	    Crema           5.56:1
+6	        Verde Ruta	        Crema           4.93:1
+7	        Naranja Pedal	    Crema           2.05:1
+8	        Blanco #FFFFFF	   Azul Noche      15.97:1
+
+11. Día 2| MiniReto 8| Punto 4
+Apta para texto normal: ratio igual o superior a 4.5:1.
+Apta solo para texto grande: ratio igual o superior a 3:1, pero inferior a 4.5:1.
+No apta: ratio inferior a 3:1.
+Combinación	Texto	            Fondo           Ratio       Texto normal    Texto grande
+1	        Blanco #FFFFFF	   Verde Ruta      5.31:1      Apta            Apta
+2	        Blanco #FFFFFF	   Naranja Pedal   2.21:1      No apta         No apta
+3	        Azul Noche	        Naranja Pedal   7.2:1       Apta            Apta
+4	        Azul Noche	        Crema           14.82:1     Apta            Apta
+5	        Gris Asfalto	    Crema           5.56:1      Apta            Apta
+6	        Verde Ruta	        Crema           4.93:1      Apta            Apta
+7	        Naranja Pedal	    Crema           2.05:1      No apta         No apta
+8	        Blanco #FFFFFF	   Azul Noche      15.97:1     Apta            Apta
+
+Mapa de uso de color
+
+A partir de la evaluación de contraste realizada con WebAIM Contrast Checker, se establecieron las siguientes combinaciones para garantizar la legibilidad del contenido y mantener la identidad visual del sitio.
+
+| Elemento                      | Color del texto | Color del fondo | Ratio   | Uso |
+
+| Texto principal               | Azul Noche      | Crema           | 14.82:1 | Párrafos, instrucciones y contenido general.                              |
+| Texto secundario              | Gris Asfalto    | Crema           | 5.56:1  | Información complementaria y descripciones.                               |
+| Encabezado y pie de página    | Blanco          | Azul Noche      | 15.97:1 | Nombre del negocio y contenido de navegación.                             |
+| Botón principal               | Blanco          | Verde Ruta      | 5.31:1  | Acciones principales del sitio.                                           |
+| Botón secundario              | Azul Noche      | Naranja Pedal   | 7.2:1   | Acciones complementarias y llamadas a la acción.                          |
+| Enlaces                       | Azul Noche      | Crema           | 14.82:1 | Enlaces dentro del contenido; se utilizará subrayado para identificarlos. |
+| Detalles de marca             | Verde Ruta      | Crema           | 4.93:1  | Encabezados secundarios, iconos y detalles visuales.                      |
+| Fondo general                 | Azul Noche o    | Crema           | 14.82:1 | Fondo de las páginas, tarjetas y secciones.                               |
+                                  Gris Asfalto                                      o 5.56:1 
+Combinaciones que se evitarán
+
+- Blanco sobre Naranja Pedal (2.21:1): no cumple el contraste mínimo para texto normal ni texto grande.
+- Naranja Pedal sobre Crema (2.05:1): no cumple el contraste mínimo para texto normal ni texto grande.
+
+El naranja se conservará como color de identidad visual, pero se utilizará con texto Azul Noche cuando funcione como fondo de botones. Se evitará utilizarlo como texto sobre fondos crema.
+
+Criterios de accesibilidad
+
+Las combinaciones destinadas a texto normal deben alcanzar una relación mínima de contraste de 4.5:1, mientras que para texto grande se requiere un mínimo de 3:1. Además, se comprobará que
+los componentes interactivos, como botones, campos e indicadores de foco, cumplan los criterios de contraste no textual que les correspondan.
+Esta distribución permite conservar la identidad visual de Rueda Libre y priorizar la legibilidad, la accesibilidad y la claridad de la navegación.
+
+11. Día 2| MiniReto 8| Punto 7
+Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/

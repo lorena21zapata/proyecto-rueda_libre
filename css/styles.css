@@ -1,0 +1,44 @@
+:root {
+     /* Colores de marca */
+    --color-verde-ruta: #1E7A4F;
+    --color-naranja-pedal: #F39A2B;
+    --color-azul-noche: #14213D;
+    --color-crema: #FAF6EF;
+    --color-gris-asfalto: #5B6470;
+
+    /* Tipografías */
+    --font-heading: "Montserrat", Arial, sans-serif;
+    --font-body: "Open Sans", Arial,  sans-serif;
+
+    /* Escala de espaciado */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-crema);
+    color: var(--color-azul-noche);
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+}
+
+button {
+    background-color: var(--color-verde-ruta);
+    color: white;
+    padding: var(--space-2) var(--space-4);
+}

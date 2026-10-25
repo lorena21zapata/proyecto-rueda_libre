@@ -250,3 +250,27 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
     Verificación: Se utilizó DevTools para inspeccionar los enlaces, revisar la especificidad de los selectores en la pestaña *Styles* y comprobar el color final en *Computed*.
 
     Aprendizaje: Comprendí que la especificidad determina qué regla CSS prevalece cuando varias declaraciones afectan a la misma propiedad. Aprendí a resolver conflictos aumentando la especificidad del selector, sin recurrir a `!important` ni a estilos en línea, y a utilizar una clase para identificar visualmente la página actual en el menú de navegación.
+
+13. Cierre de bitácora
+
+    Trabajo realizado
+
+    Durante los miniretos desarrollé las páginas de inicio, tarifas y reservas utilizando HTML semántico. Construí tablas de tarifas, un formulario de reserva con validaciones nativas y enlaces entre las diferentes páginas.
+
+    También organicé los estilos en una hoja CSS compartida mediante variables globales para los colores de marca, las tipografías y el espaciado. Trabajé con el modelo de caja, la especificidad, los estados de interacción y la navegación mediante teclado.
+
+    Finalmente, revisé criterios de accesibilidad, evalué combinaciones de contraste, mejoré la presentación de las tarjetas y preparé la publicación del sitio en GitHub Pages.
+
+    Aprendizajes
+
+    Comprendí la importancia de las rutas relativas, la herencia y la especificidad de CSS, las validaciones de formularios y el uso de DevTools para identificar y corregir errores. También practiqué el uso de Git para registrar cambios y sincronizar el proyecto con GitHub.
+
+    Aspectos por mejorar
+
+    Mejoraría la adaptación de la interfaz a distintos tamaños de pantalla, profundizaría en las pruebas con lectores de pantalla y tecnologías de asistencia, y optimizaría el rendimiento de las imágenes. Además, implementaría un sistema de backend para procesar las reservas y gestionar la disponibilidad real de las bicicletas.
+
+    Publicación
+
+    URL de GitHub Pages: [añadir la URL pública del proyecto]
+
+    Versión: 1.0

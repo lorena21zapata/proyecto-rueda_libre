@@ -1,14 +1,20 @@
+
+/* ==================================================
+   1. VARIABLES GLOBALES
+   Colores, tipografías y escala de espaciado
+   ================================================== */
+
 :root {
-     /* Colores de marca */
+    /* Colores de marca */
     --color-verde-ruta: #1E7A4F;
     --color-naranja-pedal: #F39A2B;
     --color-azul-noche: #14213D;
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
 
-    /* Tipografías */
+    /* Tipografías con fuentes de respaldo */
     --font-heading: "Montserrat", Arial, sans-serif;
-    --font-body: "Open Sans", Arial,  sans-serif;
+    --font-body: "Open Sans", Arial, sans-serif;
 
     /* Escala de espaciado */
     --space-1: 0.25rem;
@@ -18,15 +24,32 @@
     --space-5: 1.5rem;
     --space-6: 2rem;
     --space-7: 3rem;
-    
 }
 
+
+/* ==================================================
+   2. MODELO DE CAJA
+   Incluye padding y border en las dimensiones
+   ================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* ==================================================
+   3. ESTILOS GENERALES
+   Tipografía, colores y estructura de la página
+   ================================================== */
+
 body {
+    margin: var(--space-4);
+    padding: var(--space-4);
     font-family: var(--font-body);
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
-    margin: var(--space-4);
-    padding: var(--space-4);
 }
 
 h1,
@@ -38,10 +61,26 @@ h6 {
     font-family: var(--font-heading);
 }
 
-button {
-    background-color: var(--color-verde-ruta);
-    color: white;
-    padding: var(--space-2) var(--space-4);
+main {
+    width: 90%;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+
+/* ==================================================
+   4. NAVEGACIÓN
+   Menú, enlace activo e interacción
+   ================================================== */
+
+#menu {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+#menu p {
+    margin: 0;
 }
 
 #menu a {
@@ -52,78 +91,103 @@ button {
     color: var(--color-verde-ruta);
     font-weight: 600;
 }
+
 /* Al pasar el puntero */
 #menu a:hover {
-    color: var(--azul-noche);
+    color: var(--color-azul-noche);
     text-decoration: underline;
 }
 
 /* Al navegar con el teclado */
 #menu a:focus-visible {
-    color: var(--azul-noche);
-    outline: 3px solid var(--azul-noche);
+    color: var(--color-azul-noche);
+    outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
+}
+
+
+/* ==================================================
+   5. TARJETAS DE SERVICIOS
+   Contenedores e imágenes
+   ================================================== */
+
+.tarjeta {
+    padding: var(--space-4);
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 1rem;
+}
+
+.tarjeta img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Tarjeta de bicicletas eléctricas */
+.tarjeta-electrica {
+    position: relative;
+}
+
+/* Etiqueta de novedad */
+.etiqueta-nuevo {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    padding: var(--space-1) var(--space-3);
+    border-radius: 0.5rem;
+    background-color: var(--color-verde-ruta);
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+
+/* ==================================================
+   6. BOTONES Y ENLACES DE ACCIÓN
+   Botón de reserva y estados interactivos
+   ================================================== */
+
+button,
+.boton-accion {
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-verde-ruta);
+    color: #FFFFFF;
+    font: inherit;
 }
 
 .boton-accion {
     display: inline-block;
-    background-color: var(--color-verde-ruta);
-    color: #FFFFFF;
     padding: var(--space-3) var(--space-5);
     border-radius: 0.5rem;
     font-weight: 600;
     text-decoration: none;
 }
 
+/* Estado hover de los botones */
 .boton-accion:hover {
     background-color: var(--color-azul-noche);
     color: #FFFFFF;
 }
 
+/* Foco visible de los botones */
+button:focus-visible,
 .boton-accion:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
 }
 
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 3px;
-}
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-main {
-    width: 90%;
-    max-width: 70rem;
-    margin: 0 auto;
-}
-
-.tarjeta {
-    padding: var(--space-4);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 1rem;
-    margin-bottom: var(--space-4);
-}
-
-.tarjeta img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
+/* ==================================================
+   7. TABLAS
+   Tarifas y recorridos
+   ================================================== */
 
 table {
     width: 100%;
-    border-collapse: collapse;
     margin-bottom: var(--space-4);
-    
+    border-collapse: collapse;
 }
+
 th,
 td {
     padding: var(--space-3);
@@ -135,6 +199,12 @@ th {
     background-color: var(--color-azul-noche);
     color: #FFFFFF;
 }
+
+
+/* ==================================================
+   8. FORMULARIOS
+   Campos, etiquetas y grupos
+   ================================================== */
 
 form fieldset {
     margin-bottom: var(--space-5);
@@ -161,12 +231,39 @@ form textarea {
     resize: vertical;
 }
 
-#menu {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
+/* Foco visible en los campos */
+form input:focus-visible,
+form select:focus-visible,
+form textarea:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
 }
 
-#menu p {
-    margin: 0;
+
+/* ==================================================
+   9. BOTÓN FLOTANTE DE WHATSAPP
+   Contacto persistente durante el desplazamiento
+   ================================================== */
+
+.whatsapp-flotante {
+    position: fixed;
+    right: var(--space-4);
+    bottom: var(--space-4);
+    z-index: 1000;
+    padding: var(--space-3) var(--space-4);
+    border-radius: 2rem;
+    background-color: var(--color-verde-ruta);
+    color: #FFFFFF;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.whatsapp-flotante:hover {
+    background-color: var(--color-azul-noche);
+    color: #FFFFFF;
+}
+
+.whatsapp-flotante:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
 }

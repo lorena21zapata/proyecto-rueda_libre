@@ -227,3 +227,26 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
     Resultado: La comprobación permitió reconocer que la herencia CSS transmite determinadas propiedades del elemento padre a sus descendientes, mientras que otras deben aplicarse directamente a los elementos correspondientes.
 
     Aprendizaje: Comprendí que la herencia ayuda a mantener estilos globales consistentes y a reducir la repetición de reglas CSS, pero no todas las propiedades se transmiten automáticamente entre elementos.
+
+12. Día 3| MiniReto 10| Punto 2
+
+    Problema identificado: El enlace correspondiente a la página actual no mostraba el color verde definido para la clase `.activo`, sino que conservaba el color gris establecido para los enlaces del menú.
+
+    Causa: El selector `#menu a` tenía mayor especificidad que `.activo`. Por esta razón, la regla general del menú prevalecía sobre el color definido para el enlace activo.
+
+    Corrección realizada:** Se aumentó la especificidad del selector de la página activa, utilizando `#menu a.activo` en lugar de `.activo`. De esta manera, los enlaces generales conservan el color gris de la marca y el enlace correspondiente a la página actual utiliza el verde Ruta. También se verificó que el atributo `id="menu"` estuviera asignado al elemento `<nav>` y que la clase `activo` se aplicara al enlace correcto en cada página.
+
+    ```css
+    #menu a {
+    color: var(--color-gris-asfalto);
+    }
+
+    #menu a.activo {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+    }
+    ```
+
+    Verificación: Se utilizó DevTools para inspeccionar los enlaces, revisar la especificidad de los selectores en la pestaña *Styles* y comprobar el color final en *Computed*.
+
+    Aprendizaje: Comprendí que la especificidad determina qué regla CSS prevalece cuando varias declaraciones afectan a la misma propiedad. Aprendí a resolver conflictos aumentando la especificidad del selector, sin recurrir a `!important` ni a estilos en línea, y a utilizar una clase para identificar visualmente la página actual en el menú de navegación.

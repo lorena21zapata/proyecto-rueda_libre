@@ -18,14 +18,15 @@
     --space-5: 1.5rem;
     --space-6: 2rem;
     --space-7: 3rem;
+    
 }
 
 body {
     font-family: var(--font-body);
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
-    margin: 0;
-    padding: 0;
+    margin: var(--space-4);
+    padding: var(--space-4);
 }
 
 h1,
@@ -41,4 +42,53 @@ button {
     background-color: var(--color-verde-ruta);
     color: white;
     padding: var(--space-2) var(--space-4);
+}
+
+#menu a {
+    color: var(--color-gris-asfalto);
+}
+
+#menu a.activo {
+    color: var(--color-verde-ruta);
+    font-weight: 600;
+}
+/* Al pasar el puntero */
+#menu a:hover {
+    color: var(--azul-noche);
+    text-decoration: underline;
+}
+
+/* Al navegar con el teclado */
+#menu a:focus-visible {
+    color: var(--azul-noche);
+    outline: 3px solid var(--azul-noche);
+    outline-offset: 3px;
+}
+
+.boton-accion {
+    display: inline-block;
+    background-color: var(--color-verde-ruta);
+    color: #FFFFFF;
+    padding: var(--space-3) var(--space-5);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.boton-accion:hover {
+    background-color: var(--color-azul-noche);
+    color: #FFFFFF;
+}
+
+.boton-accion:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-azul-noche);
+    outline-offset: 3px;
 }

@@ -251,6 +251,7 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
 
     Aprendizaje: Comprendí que la especificidad determina qué regla CSS prevalece cuando varias declaraciones afectan a la misma propiedad. Aprendí a resolver conflictos aumentando la especificidad del selector, sin recurrir a `!important` ni a estilos en línea, y a utilizar una clase para identificar visualmente la página actual en el menú de navegación.
 
+13.Día 3| MiniReto 11| Punto 2
 13. Cierre de bitácora
 
     Trabajo realizado

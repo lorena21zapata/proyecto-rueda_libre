@@ -79,12 +79,14 @@ main {
     gap: var(--space-4);
 }
 
-#menu p {
-    margin: 0;
-}
-
-#menu a {
-    color: var(--color-gris-asfalto);
+#menu .listaMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    list-style: none;
+    padding: var(--space-2);
 }
 
 #menu a.activo {
@@ -94,7 +96,7 @@ main {
 
 /* Al pasar el puntero */
 #menu a:hover {
-    color: var(--color-azul-noche);
+    color: var(--color-gris-asfalto);
     text-decoration: underline;
 }
 
@@ -261,9 +263,25 @@ form textarea:focus-visible {
 .whatsapp-flotante:hover {
     background-color: var(--color-azul-noche);
     color: #FFFFFF;
+    transform: translateY(-2px);
 }
 
 .whatsapp-flotante:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
+}
+
+/* ==================================================
+   10.ORGANIZACIÓN ENCABEZADO
+   Separación de elementos
+   ================================================== */
+.encabezado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    background-color:var(--color-azul-noche);
+}
+h1{
+    color: #FFFFFF;
 }

@@ -38,7 +38,7 @@
 
         Section: agrupa los bloques temáticos de la página, como la presentación del negocio y sus servicios.
 
-        Article: se utilizará para representar cada servicio cuando tenga contenido independiente y sentido por sí mismo.
+        Article: representa cada servicio del negocio.
 
         Footer: contiene el nombre del negocio, el correo electrónico de contacto y el año.
 
@@ -52,7 +52,7 @@
 
         Section: agrupa la tabla de recorridos y tarifas.
 
-        Aside: contiene información complementaria relacionada con las tarifas, cuando corresponda.
+        Aside: contiene información complementaria relacionada con las tarifas, lo que se requiere y los horarios.
 
         Footer: contiene el nombre del negocio, el correo electrónico de contacto y el año.
 
@@ -66,7 +66,7 @@
 
         Section: organiza el formulario de reserva y el horario de atención en bloques temáticos diferenciados.
 
-        Aside: puede utilizarse para presentar información complementaria sobre el horario de atención, si su función es secundaria respecto al contenido principal.
+        Aside: muestra la información de los horarios.
 
         Footer: contiene el nombre del negocio, el correo electrónico de contacto y el año.
 
@@ -76,7 +76,7 @@
 
         Se utilizaron elementos section para agrupar contenido relacionado temáticamente. Se revisará que cada sección cuente con un encabezado descriptivo y que los elementos article se utilicen únicamente cuando el contenido tenga sentido independiente.
 
-        No se utilizaron elementos div para organizar los bloques temáticos. Si se conserva algún elemento div o span, su uso deberá justificarse cuando cumpla una función de agrupación o presentación para la que no exista un elemento semántico más apropiado.
+        No se utilizaron elementos div para organizar los bloques temáticos..
 
 6. Día 2| MiniReto 5| Punto 5
     No se implementó ningún <div> o <span>
@@ -84,11 +84,11 @@
 7. Día 2| MiniReto 6| Punto 1
     1. Correo electrónico — campo de tipo email
 
-        Se seleccionó el control input type="email" porque permite introducir una dirección de correo electrónico y realizar una validación básica del formato. Además, su etiqueta visible permite identificar claramente la información solicitada.
+        Se seleccionó el control input type="email" porque permite introducir una dirección de correo electrónico y realizar una validación básica del formato.
 
     2. Tipo de bicicleta — lista desplegable
 
-        Se seleccionó el control select porque el cliente debe elegir una opción entre varios tipos de bicicleta disponibles. Este control organiza las alternativas en un espacio reducido y evita que el usuario tenga que escribir manualmente el nombre del tipo de bicicleta.
+        Se seleccionó select porque el cliente debe elegir una opción entre varios tipos de bicicleta disponibles. Este control organiza las alternativas en un espacio reducido y evita que el usuario tenga que escribir manualmente el nombre del tipo de bicicleta.
 
     3. Aceptación de las condiciones — casilla de verificación
 

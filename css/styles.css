@@ -87,6 +87,8 @@ main {
     color: #FFFFFF;
     list-style: none;
     padding: var(--space-2);
+    flex-wrap: wrap;
+    overflow: auto;
 }
 
 #menu a.activo {
@@ -187,19 +189,22 @@ button:focus-visible,
 table {
     width: 100%;
     margin-bottom: var(--space-4);
-    border-collapse: collapse;
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 10px;
 }
 
 th,
 td {
     padding: var(--space-3);
-    border: 1px solid var(--color-gris-asfalto);
+    
     text-align: left;
+    
 }
 
 th {
     background-color: var(--color-azul-noche);
     color: #FFFFFF;
+    border-radius: 10px;
 }
 
 
@@ -279,9 +284,28 @@ form textarea:focus-visible {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
     background-color:var(--color-azul-noche);
+    justify-content: space-around;
 }
 h1{
     color: #FFFFFF;
+}
+.listaMenu li {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-azul-noche);
+    justify-content: flex-end;
+    padding: 10px;
+}
+a:visited {
+    color: #FFFFFF;
+}
+footer{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    background-color: var(--color-azul-noche);
+}
+.logo-footer {
+    max-width: 200px;
 }

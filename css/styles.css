@@ -1,7 +1,7 @@
 
 /* ==================================================
    1. VARIABLES GLOBALES
-   Colores, tipografías y escala de espaciado
+   Colores, tipografías y espaciado
    ================================================== */
 
 :root {
@@ -12,7 +12,7 @@
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
 
-    /* Tipografías con fuentes de respaldo */
+    /* Tipografías */
     --font-heading: "Montserrat", Arial, sans-serif;
     --font-body: "Open Sans", Arial, sans-serif;
 
@@ -41,15 +41,20 @@
 
 /* ==================================================
    3. ESTILOS GENERALES
-   Tipografía, colores y estructura de la página
+   Estilos base para móvil
    ================================================== */
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: var(--space-4);
-    padding: var(--space-4);
+    margin: 0;
+    padding: var(--space-3);
     font-family: var(--font-body);
     background-color: var(--color-crema);
     color: var(--color-azul-noche);
+    line-height: 1.5;
 }
 
 h1,
@@ -59,81 +64,158 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
+    line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+p {
+    overflow-wrap: break-word;
 }
 
 main {
-    width: 90%;
+    width: 100%;
     max-width: 70rem;
-    margin: 0 auto;
+    margin-inline: auto;
 }
 
-
-/* ==================================================
-   4. NAVEGACIÓN
-   Menú, enlace activo e interacción
-   ================================================== */
-
-#menu {
-    display: flex;
-    align-items: center;
-    gap: var(--space-4);
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-#menu .listaMenu {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    color: #FFFFFF;
-    list-style: none;
-    padding: var(--space-2);
-    flex-wrap: wrap;
-    overflow: auto;
+a {
+    overflow-wrap: anywhere;
 }
 
-#menu a.activo {
-    color: var(--color-verde-ruta);
-    font-weight: 600;
-}
-
-/* Al pasar el puntero */
-#menu a:hover {
-    color: var(--color-gris-asfalto);
-    text-decoration: underline;
-}
-
-/* Al navegar con el teclado */
-#menu a:focus-visible {
-    color: var(--color-azul-noche);
+a:focus-visible {
     outline: 3px solid var(--color-azul-noche);
     outline-offset: 3px;
 }
 
 
 /* ==================================================
-   5. TARJETAS DE SERVICIOS
-   Contenedores e imágenes
+   4. ENCABEZADO Y NAVEGACIÓN
+   Móvil: nombre arriba y menú debajo
+   ================================================== */
+
+.encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    background-color: var(--color-azul-noche);
+    text-align: center;
+}
+
+.encabezado h1 {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+#menu {
+    width: 100%;
+}
+
+#menu .listaMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu .listaMenu li {
+    padding: var(--space-2);
+}
+
+#menu a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#menu a.activo {
+    color: var(--color-naranja-pedal);
+    font-weight: 700;
+}
+
+#menu a:hover {
+    color: var(--color-naranja-pedal);
+    text-decoration: underline;
+}
+
+#menu a:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 3px;
+}
+
+
+/* ==================================================
+   5. PORTADA
+   Móvil: texto e imagen en una columna
+   ================================================== */
+
+.portada {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: center;
+    padding-block: var(--space-5);
+}
+
+.portada-texto {
+    min-width: 0;
+    align-self: center;
+}
+
+.portada-texto h2 {
+    color: var(--color-azul-noche);
+}
+
+.portada-imagen {
+    min-width: 0;
+}
+
+.portada-imagen img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* ==================================================
+   6. TARJETAS DE SERVICIOS
    ================================================== */
 
 .tarjeta {
+    min-width: 0;
     padding: var(--space-4);
     margin-bottom: var(--space-4);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 1rem;
+    background-color: #FFFFFF;
 }
 
 .tarjeta img {
-    display: block;
     width: 100%;
     height: auto;
 }
 
 /* Tarjeta de bicicletas eléctricas */
+
 .tarjeta-electrica {
     position: relative;
 }
 
 /* Etiqueta de novedad */
+
 .etiqueta-nuevo {
     position: absolute;
     top: var(--space-3);
@@ -147,8 +229,7 @@ main {
 
 
 /* ==================================================
-   6. BOTONES Y ENLACES DE ACCIÓN
-   Botón de reserva y estados interactivos
+   7. BOTONES Y ENLACES DE ACCIÓN
    ================================================== */
 
 button,
@@ -159,6 +240,10 @@ button,
     font: inherit;
 }
 
+button {
+    cursor: pointer;
+}
+
 .boton-accion {
     display: inline-block;
     padding: var(--space-3) var(--space-5);
@@ -167,13 +252,12 @@ button,
     text-decoration: none;
 }
 
-/* Estado hover de los botones */
-.boton-accion:hover {
+.boton-accion:hover,
+button:hover {
     background-color: var(--color-azul-noche);
     color: #FFFFFF;
 }
 
-/* Foco visible de los botones */
 button:focus-visible,
 .boton-accion:focus-visible {
     outline: 3px solid var(--color-azul-noche);
@@ -182,40 +266,58 @@ button:focus-visible,
 
 
 /* ==================================================
-   7. TABLAS
-   Tarifas y recorridos
+   8. TABLAS
+   Estilos base legibles en móvil
    ================================================== */
 
 table {
     width: 100%;
     margin-bottom: var(--space-4);
     border: 1px solid var(--color-gris-asfalto);
-    border-radius: 10px;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+    font-size: 0.75rem;
+    table-layout: fixed;
+}
+
+caption {
+    padding: var(--space-2);
+    margin-bottom: var(--space-2);
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    background-color: var(--color-naranja-pedal);
+    color: var(--color-azul-noche);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 0.5rem;
 }
 
 th,
 td {
-    padding: var(--space-3);
-    
+    padding: var(--space-1);
     text-align: left;
-    
+    vertical-align: top;
+    overflow-wrap: anywhere;
+    border-bottom: 1px solid #D5D5D5;
 }
 
 th {
     background-color: var(--color-azul-noche);
     color: #FFFFFF;
-    border-radius: 10px;
+    font-weight: 700;
 }
 
 
 /* ==================================================
-   8. FORMULARIOS
-   Campos, etiquetas y grupos
+   9. FORMULARIOS
    ================================================== */
 
 form fieldset {
+    min-width: 0;
     margin-bottom: var(--space-5);
     padding: var(--space-4);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 10px;
 }
 
 form label {
@@ -229,6 +331,7 @@ form textarea {
     display: block;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
     margin-bottom: var(--space-4);
     padding: var(--space-3);
     font: inherit;
@@ -238,7 +341,6 @@ form textarea {
     resize: vertical;
 }
 
-/* Foco visible en los campos */
 form input:focus-visible,
 form select:focus-visible,
 form textarea:focus-visible {
@@ -246,16 +348,220 @@ form textarea:focus-visible {
     outline-offset: 3px;
 }
 
+/* Fila de campos relacionados */
+
+.campos-fila {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+}
+
+.campos-fila .campo {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
 
 /* ==================================================
-   9. BOTÓN FLOTANTE DE WHATSAPP
-   Contacto persistente durante el desplazamiento
+   10. GALERÍA DE RUTAS
+   Móvil: una tarjeta por fila
+   ================================================== */
+
+.rutas-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+}
+
+.tarjeta-ruta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: var(--space-4);
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+}
+
+.tarjeta-ruta h3 {
+    color: var(--color-azul-noche);
+}
+
+.nivel-ruta {
+    font-weight: 700;
+}
+
+.nivel-facil {
+    color: var(--color-verde-ruta);
+}
+
+.nivel-medio {
+    color: #805000;
+}
+
+.nivel-dificil {
+    color: #A32121;
+}
+
+
+/* ==================================================
+   11. FLOTA DE BICICLETAS
+   Móvil: columnas según el espacio disponible
+   ================================================== */
+
+.flota-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 220px), 1fr)
+    );
+    gap: var(--space-4);
+}
+
+.tarjeta-bicicleta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: var(--space-4);
+    border: 1px solid #DDDDDD;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+
+.tarjeta-bicicleta img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.tarjeta-bicicleta h3 {
+    color: var(--color-azul-noche);
+    margin-bottom: var(--space-2);
+}
+
+.tarjeta-bicicleta p {
+    line-height: 1.5;
+}
+
+.tarjeta-bicicleta .precio {
+    font-weight: 700;
+    color: var(--color-verde-ruta);
+}
+
+.tarjeta-bicicleta a {
+    display: block;
+    margin-top: auto;
+    padding: var(--space-2) var(--space-3);
+    background-color: var(--color-verde-ruta);
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.tarjeta-bicicleta a:hover,
+.tarjeta-bicicleta a:focus-visible {
+    background-color: var(--color-azul-noche);
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+
+/* ==================================================
+   12. PÁGINA DE RESERVAS
+   Móvil: formulario y contacto apilados
+   ================================================== */
+
+.reservas-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+    align-items: start;
+}
+
+.formulario_reserva,
+.informacion_contacto {
+    min-width: 0;
+    padding: var(--space-4);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 12px;
+}
+
+.informacion_contacto {
+    background-color: #FFFFFF;
+}
+
+.informacion_contacto h3 {
+    margin-bottom: var(--space-2);
+    text-align: center;
+}
+
+.informacion_contacto dl {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   13. BLOQUE DE INFORMACIÓN DE TARIFAS
+   ================================================== */
+
+.tarifas-incluye {
+    min-width: 0;
+    padding: var(--space-4);
+    border: 1px solid var(--color-gris-asfalto);
+    border-radius: 12px;
+    background-color: #FFFFFF;
+}
+
+
+/* ==================================================
+   14. PIE DE PÁGINA
+   Móvil: elementos apilados
+   ================================================== */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    color: #FFFFFF;
+    background-color: var(--color-azul-noche);
+}
+
+.logo-footer {
+    width: 100px;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==================================================
+   15. BOTÓN FLOTANTE DE WHATSAPP
    ================================================== */
 
 .whatsapp-flotante {
     position: fixed;
-    right: var(--space-4);
-    bottom: var(--space-4);
+    right: var(--space-3);
+    bottom: var(--space-3);
     z-index: 1000;
     padding: var(--space-3) var(--space-4);
     border-radius: 2rem;
@@ -276,120 +582,131 @@ form textarea:focus-visible {
     outline-offset: 3px;
 }
 
+
 /* ==================================================
-   10.ORGANIZACIÓN ENCABEZADO
-   Separación de elementos
+   16. TABLETA
+   Desde 768 px
    ================================================== */
-.encabezado {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color:var(--color-azul-noche);
-    justify-content: space-around;
-}
-h1{
-    color: #FFFFFF;
-}
-.listaMenu li {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: var(--color-azul-noche);
-    justify-content: flex-end;
-    padding: 10px;
-}
-a:visited {
-    color: #FFFFFF;
-}
-footer{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    background-color: var(--color-azul-noche);
-}
-.logo-footer {
-    max-width: 200px;
+
+@media (min-width: 768px) {
+
+    /* Encabezado y navegación */
+
+    .encabezado {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    #menu {
+        width: auto;
+    }
+
+    #menu .listaMenu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+    }
+
+    /* Portada */
+
+    .portada {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: var(--space-6);
+    }
+
+    /* Galería: tres tarjetas en una fila */
+
+    .rutas-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .tarjeta-ruta img {
+        height: 160px;
+    }
+
+    /* Reservas: proporción 2:1 */
+
+    .reservas-layout {
+        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    }
+
+    .formulario_reserva,
+    .informacion_contacto {
+        padding: var(--space-4);
+    }
+
+    /* Dos campos cortos en la misma fila */
+
+    .campos-fila {
+        flex-direction: row;
+        gap: var(--space-4);
+    }
+
+    /* Pie de página */
+
+    footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* Tablas */
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th,
+    td {
+        padding: var(--space-2);
+    }
 }
 
 
-/* ===== NUESTRA FLOTA: CUADRÍCULA ===== */
+/* ==================================================
+   17. ESCRITORIO
+   Desde 1200 px
+   ================================================== */
 
-.flota-grid {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(220px, 1fr)
-    );
-    gap: var(--space-5);
-}
+@media (min-width: 1200px) {
 
-/* ===== TARJETAS DE BICICLETAS ===== */
+    body {
+        padding: var(--space-4);
+    }
 
-.tarjeta-bicicleta {
-    display: flex;
-    flex-direction: column;
-    padding: var(--space-4);
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    background-color: #ffffff;
-}
+    main {
+        width: 90%;
+    }
 
-/* Imágenes */
+    .portada {
+        gap: var(--space-7);
+    }
 
-.tarjeta-bicicleta img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-}
+    .rutas-grid {
+        gap: var(--space-5);
+    }
 
-/* Títulos y textos */
+    .tarjeta-ruta img {
+        height: 200px;
+    }
 
-.tarjeta-bicicleta h3 {
-    color: var(--color-azul-noche);
-    margin-bottom: var(--space-2);
-}
+    .formulario_reserva,
+    .informacion_contacto {
+        padding: var(--space-5);
+    }
 
-.tarjeta-bicicleta p {
-    line-height: 1.5;
-}
+    .campos-fila {
+        gap: var(--space-4);
+    }
 
-.tarjeta-bicicleta .precio {
-    font-weight: bold;
-    color: var(--color-verde-ruta);
-}
+    table {
+        font-size: 1rem;
+    }
 
-/* Enlace Reservar al final */
-
-.tarjeta-bicicleta a {
-    display: inline-block;
-    margin-top: auto;
-    padding: var(--space-2) var(--space-3);
-    background-color: var(--color-verde-ruta);
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-.tarjeta-bicicleta a:hover,
-.tarjeta-bicicleta a:focus-visible {
-    background-color: var(--color-azul-noche);
-    text-decoration: underline;
-}
-.tarjeta-bicicleta img {
-    display: block;
-    width: 100%;
-    height: 180px;
-    object-fit: contain;
-    object-position: center;
-    background-color: #FFFFFF;
-    border-radius: 8px;
-}
-.tarjeta-bicicleta img {
-    display: block;
-    width: 100%;
-    height: 150px;
-    object-fit: contain;
-    object-position: center;
-    background-color: #fff;
+    th,
+    td {
+        padding: var(--space-3);
+    }
 }

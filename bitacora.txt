@@ -275,5 +275,5 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
 14. Semana 2| Día 1| Minireto 1| Punto 1
     Cuando se estrecha la ventana, tanto el header como el footer se van recogiendo y adaptando al espacio. Algo que puedo notar es que el padding de los
     enlaces en el header se salen un poco. Es algo que intentaré resolver en el siguiente minireto.
-15. emana 2| Día 1| Minireto 1| Punto 2
+15. Semana 2| Día 1| Minireto 1| Punto 2
 Al inicio se veía solo una columna, esto se dió debido a que la propiedad grid no la estaba tomando el CSS. 

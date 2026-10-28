@@ -19,117 +19,129 @@
         </nav>
     </header>
     <main>
-        <aside>
-            <h2>Reserva tu próxima aventura</h2>
-            <p>
-            <a href="mailto:ruedalibre@gmail.com" target="_blank">Envíanos un correo</a>
-            </p>
-            <h3>Horario de atención:</h3>
-            <dl>
-                <dt>lunes a viernes</dt>
-                <dd>7:00 a. m. a 7:00 p. m.</dd>
-                <dt>sábados, domingos y festivos</dt>
-                <dd>6:00 a. m. a 2:00 p. m.</dd>
-            </dl>
-        </aside>
+        <h2>Reserva tu próxima aventura</h2>
+                    
         <section>
             <p>
                 <a href="../index.html">Página principal</a>
             </p>
         </section>
-        <section>
-            <h2>Formulario de reserva</h2>
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Tus datos</legend>
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required minlength="3"><br><br>
+        <section class="reservas-layout">
+            <section id="formulario_reserva">
+                <h2>Formulario de reserva</h2>
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Tus datos</legend>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required minlength="3"><br><br>
+                    <div class="campos-fila">
+                        <div class="campo">
+                            <label for="documento">Documento de identidad</label>
+                            <input type="number" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Ingrese su número de identificación sin espacios ni puntos"> <br><br>
+                        </div>
+                        <div class="campo">
+                            <label for="telefono">Teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{9}" title="Ingrese 10 dígitos. Elnúmeor debe empezar por 3"><br><br>
+                        </div>
+                    </div>
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required><br><br>
 
-                    <label for="documento">Documento de identidad</label>
-                    <input type="number" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Ingrese su número de identificación sin espacios ni puntos"> <br><br>
-
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required><br><br>
-
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{9}" title="Ingrese 10 dígitos. Elnúmeor debe empezar por 3"><br><br>
-                </fieldset>
-                
-                <fieldset>
-                    <legend>Tu alquiler</legend>
-
-                    <label for="servicio">Servicio:</label>
-                    <select id="servicio" name="servicio" required>
-                        <option value="">Selecciona un servicio</option>
-                        <option value="alquiler">Alquiler de bicicletas</option>
-                        <option value="recorrido">Recorrido guiado</option>
-                        <option value="workshop">Taller básico</option>
-                    </select>
-
-                    <label for="bicicleta">Tipo de bicicleta:</label>
-                    <select id="bicicleta" name="bicicleta" required>
-                        <option value="">Selecciona una bicicleta</option>
-                        <option value="urbana">Bicicleta urbana</option>
-                        <option value="montana">Bicicleta de montaña</option>
-                        <option value="electrica">Bicicleta eléctrica</option>
-                    </select>
-                    <label for="recorrido">Tipo de recorrido</label>
-                    <select name="recorrido" id="recorrido" required>
-                        <option value="">Selecciona un recorrido</option>
-                        <option value="recorrido">Ninguno</option>
-                        <option name="recorrido">Ríos y Parques</option>
-                        <option name="recorrido">Sabores de Barrios</option>
-                        <option name="recorrido">Reto en las Palmas</option>
-                    </select>
-                    <label for="fecha">Fecha de reserva:</label>
-                    <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
-
-                    <label for="cantidad">Cantidad de bicicletas:</label>
-                    <input type="number" id="cantidad" name="cantidad"
-                        min="1" max="6" value="1" required>
-
-                    <p>Duración del alquiler:</p>
-
-                    <label for="una_hora">Una hora</label>
-                    <input type="radio" id="una_hora" name="duracion"
-                        value="una_hora" required>
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{9}" title="Ingrese 10 dígitos. Elnúmeor debe empezar por 3"><br><br>
+                    </fieldset>
                     
-                    <label for="medio_dia">Medio día</label>
-                    <input type="radio" id="medio_dia" name="duracion"
-                        value="medio_dia">
-                   
-                    <label for="dia_completo">Día completo</label>
-                    <input type="radio" id="dia_completo" name="duracion"
-                        value="dia_completo">
+                    <fieldset>
+                        <legend>Tu alquiler</legend>
+
+                        <label for="servicio">Servicio:</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="alquiler">Alquiler de bicicletas</option>
+                            <option value="recorrido">Recorrido guiado</option>
+                            <option value="workshop">Taller básico</option>
+                        </select>
+
+                        <label for="bicicleta">Tipo de bicicleta:</label>
+                        <select id="bicicleta" name="bicicleta" required>
+                            <option value="">Selecciona una bicicleta</option>
+                            <option value="urbana">Bicicleta urbana</option>
+                            <option value="montana">Bicicleta de montaña</option>
+                            <option value="electrica">Bicicleta eléctrica</option>
+                        </select>
+                        <label for="recorrido">Tipo de recorrido</label>
+                        <select name="recorrido" id="recorrido" required>
+                            <option value="">Selecciona un recorrido</option>
+                            <option value="recorrido">Ninguno</option>
+                            <option name="recorrido">Ríos y Parques</option>
+                            <option name="recorrido">Sabores de Barrios</option>
+                            <option name="recorrido">Reto en las Palmas</option>
+                        </select>
+                        <label for="fecha">Fecha de reserva:</label>
+                        <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
+
+                        <label for="cantidad">Cantidad de bicicletas:</label>
+                        <input type="number" id="cantidad" name="cantidad"
+                            min="1" max="6" value="1" required>
+
+                        <p>Duración del alquiler:</p>
+
+                        <label for="una_hora">Una hora</label>
+                        <input type="radio" id="una_hora" name="duracion"
+                            value="una_hora" required>
+                        
+                        <label for="medio_dia">Medio día</label>
+                        <input type="radio" id="medio_dia" name="duracion"
+                            value="medio_dia">
                     
-                </fieldset>
-                
-                <fieldset>
-                    <legend>Confirmación</legend>
+                        <label for="dia_completo">Día completo</label>
+                        <input type="radio" id="dia_completo" name="duracion"
+                            value="dia_completo">
+                        
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Confirmación</legend>
 
-                    <label for="comentarios">
-                        Comentarios o solicitudes especiales:
-                    </label>
+                        <label for="comentarios">
+                            Comentarios o solicitudes especiales:
+                        </label>
 
-                    <textarea
-                        id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escribe aquí tus comentarios..."></textarea>
+                        <textarea
+                            id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escribe aquí tus comentarios..."></textarea>
 
-                    <input type="checkbox" id="condiciones" name="condiciones"value="aceptadas" maxlength="300" required>
+                        <input type="checkbox" id="condiciones" name="condiciones"value="aceptadas" maxlength="300" required>
 
-                    <label for="condiciones">
-                        Acepto las condiciones del servicio.
-                    </label>
+                        <label for="condiciones">
+                            Acepto las condiciones del servicio.
+                        </label>
 
-                </fieldset>
+                    </fieldset>
 
-                <button type="submit">Enviar reserva</button>
-
+                    <button type="submit">Enviar reserva</button>
+                </form>
+            </section>
+                <aside class="informacion_contacto">
+                    <h3>Horario de atención:</h3>
+                    <dl>
+                        <dt>Lunes a viernes:</dt>
+                            <dd>7:00 a. m. a 7:00 p. m.</dd>
+                        <dt>Sábados, domingos y festivos:</dt>
+                            <dd>6:00 a. m. a 2:00 p. m.</dd>
+                    </dl>
+                    <p>
+                        <a href="mailto:ruedalibre@gmail.com" target="_blank">Envíanos un correo</a>
+                    </p>
+                </aside>
         </section>
     </main>
     <footer>
+       </p>    
+            <img class="logo-footer" src="../img/logo.jpeg" alt="logo rueda libre" width="200px">
+        <p>
+        <p> © 2026</p>
         <p>Rueda Libre | Alquiler de bicicletas en Medellín</p>
-        <p>ruedalibre@gmail.com</p>
-        <p>2026</p>
+        <p>Contactanos: ruedalibre@gmail.com</p>
     </footer>
     <a
     class="whatsapp-flotante"

@@ -209,11 +209,11 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
 12. Día 3| MiniReto 9| Punto 7
     Hallazgo: Error al cargar la hoja de estilos CSS
 
-    roblema identificado: Al enlazar la hoja de estilos styles.css con el archivo index.html, el navegador mostró un error MIME (text/html), indicando que no podía aplicar los estilos porque el recurso solicitado no se estaba interpretando como una hoja de estilos CSS.
+    problema identificado: Al enlazar la hoja de estilos styles.css con el archivo index.html, el navegador mostró un error MIME (text/html), indicando que no podía aplicar los estilos porque el recurso solicitado no se estaba interpretando como una hoja de estilos CSS.
 
     Causa: El error podía deberse a una ruta incorrecta hacia el archivo CSS o a que el servidor estaba devolviendo contenido HTML en lugar del archivo solicitado.
 
-    orrección realizada: Se revisó la estructura de carpetas del proyecto y se verificó el nombre y la ubicación de styles.css. También se comprobó la ruta relativa utilizada en el atributo href del elemento <link>, teniendo en cuenta que index.html está en la raíz del proyecto, mientras que tarifas.html y reservas.html están dentro de la carpeta paginas.
+    Corrección realizada: Se revisó la estructura de carpetas del proyecto y se verificó el nombre y la ubicación de styles.css. También se comprobó la ruta relativa utilizada en el atributo href del elemento <link>, teniendo en cuenta que index.html está en la raíz del proyecto, mientras que tarifas.html y reservas.html están dentro de la carpeta paginas.
 
     Verificación: Se guardaron los cambios y se recargó la página para comprobar que el navegador pudiera encontrar y aplicar correctamente la hoja de estilos.
 
@@ -252,6 +252,7 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
     Aprendizaje: Comprendí que la especificidad determina qué regla CSS prevalece cuando varias declaraciones afectan a la misma propiedad. Aprendí a resolver conflictos aumentando la especificidad del selector, sin recurrir a `!important` ni a estilos en línea, y a utilizar una clase para identificar visualmente la página actual en el menú de navegación.
 
 13.Día 3| MiniReto 11| Punto 2
+
 13. Cierre de bitácora
 
     Trabajo realizado
@@ -266,12 +267,13 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
 
     Comprendí la importancia de las rutas relativas, la herencia y la especificidad de CSS, las validaciones de formularios y el uso de DevTools para identificar y corregir errores. También practiqué el uso de Git para registrar cambios y sincronizar el proyecto con GitHub.
 
-    Aspectos por mejorar
-
-    Mejoraría la adaptación de la interfaz a distintos tamaños de pantalla, profundizaría en las pruebas con lectores de pantalla y tecnologías de asistencia, y optimizaría el rendimiento de las imágenes. Además, implementaría un sistema de backend para procesar las reservas y gestionar la disponibilidad real de las bicicletas.
-
     Publicación
 
-    URL de GitHub Pages: [añadir la URL pública del proyecto]
+    URL de GitHub Pages: [https://lorena21zapata.github.io/proyecto-rueda_libre/]
 
     Versión: 1.0
+14. Semana 2| Día 1| Minireto 1| Punto 1
+    Cuando se estrecha la ventana, tanto el header como el footer se van recogiendo y adaptando al espacio. Algo que puedo notar es que el padding de los
+    enlaces en el header se salen un poco. Es algo que intentaré resolver en el siguiente minireto.
+15. emana 2| Día 1| Minireto 1| Punto 2
+Al inicio se veía solo una columna, esto se dió debido a que la propiedad grid no la estaba tomando el CSS. 

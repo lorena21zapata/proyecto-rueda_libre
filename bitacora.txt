@@ -276,4 +276,9 @@ Enlace de GitHub https://lorena21zapata.github.io/proyecto-rueda_libre/
     Cuando se estrecha la ventana, tanto el header como el footer se van recogiendo y adaptando al espacio. Algo que puedo notar es que el padding de los
     enlaces en el header se salen un poco. Es algo que intentaré resolver en el siguiente minireto.
 15. Semana 2| Día 1| Minireto 1| Punto 2
-Al inicio se veía solo una columna, esto se dió debido a que la propiedad grid no la estaba tomando el CSS. 
+    Al inicio se veía solo una columna, esto se dió debido a que la propiedad grid no la estaba tomando el CSS. 
+16. Semana 2| Día 2| Minireto 5| Punto 5
+    Me demoré 17 minutos solo orrganizando las columnas, organizando las tarjetas y los botones. Solo hice eso para esta prueba. Realmente sí es muy sencillo, porque
+    solo se necesita saber para que sirve cada clase y agregarla en el contenedor correspondiente. Mientras que en CSS se debe conocer cada propiedad, tener muy presente
+    la cascada, aunque ahí en boostrap es algo confuso lo de los hijos que hay que agregar para que se entienda que son columnas. Pero una vez uno entienda la distribución, con div incluidos
+    los tiempos sí serán mínimos.

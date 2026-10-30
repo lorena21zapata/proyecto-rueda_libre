@@ -162,7 +162,7 @@ a:focus-visible {
    Móvil: texto e imagen en una columna
    ================================================== */
 
-.portada {
+/*.portada {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: var(--space-4);
@@ -172,13 +172,13 @@ a:focus-visible {
 
 .portada-texto {
     min-width: 0;
-    align-self: center;
+    align-self: center; 
 }
-
+*/
 .portada-texto h2 {
     color: var(--color-azul-noche);
 }
-
+/*
 .portada-imagen {
     min-width: 0;
 }
@@ -188,7 +188,7 @@ a:focus-visible {
     height: auto;
     object-fit: contain;
 }
-
+*/
 
 /* ==================================================
    6. TARJETAS DE SERVICIOS
@@ -418,15 +418,15 @@ form textarea:focus-visible {
    Móvil: columnas según el espacio disponible
    ================================================== */
 
-.flota-grid {
+/*.flota-grid {
     display: grid;
     grid-template-columns: repeat(
         auto-fit,
         minmax(min(100%, 220px), 1fr)
     );
-    gap: var(--space-4);
+    gap: var(--space-4); 
 }
-
+*/
 .tarjeta-bicicleta {
     display: flex;
     flex-direction: column;
@@ -608,13 +608,13 @@ footer {
         gap: var(--space-2);
     }
 
-    /* Portada */
+    /* Portada
 
     .portada {
         grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
         gap: var(--space-6);
     }
-
+    */
     /* Galería: tres tarjetas en una fila */
 
     .rutas-grid {
@@ -679,11 +679,11 @@ footer {
     main {
         width: 90%;
     }
-
+/*
     .portada {
         gap: var(--space-7);
     }
-
+*/
     .rutas-grid {
         gap: var(--space-5);
     }

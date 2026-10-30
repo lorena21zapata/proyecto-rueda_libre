@@ -290,6 +290,7 @@ caption {
     color: var(--color-azul-noche);
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 0.5rem;
+    caption-side: top;
 }
 
 th,
@@ -485,7 +486,7 @@ form textarea:focus-visible {
    12. PÁGINA DE RESERVAS
    Móvil: formulario y contacto apilados
    ================================================== */
-
+/*
 .reservas-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -500,7 +501,7 @@ form textarea:focus-visible {
     border: 1px solid var(--color-gris-asfalto);
     border-radius: 12px;
 }
-
+*/
 .informacion_contacto {
     background-color: #FFFFFF;
 }

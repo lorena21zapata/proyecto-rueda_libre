@@ -123,15 +123,69 @@
             <h3>
                 <a href="paginas/reservas.html" class="boton-accion">¡Reserva ahora!</a>
             </h3>
-            <h3>Beneficios de alquilar con Rueda Libre</h3>
-            <ul>
-                <li>Liberta y flexibilidad</li>
-                <li>Movilidad sostenible</li>
-                <li>Bienestar y aventura</li>
-            </ul>
-            <a href="/paginas/tarifas.html">Ver tarifas</a>
-        </article>
+            <section class="my-5" aria-labelledby="titulo-beneficios">
+            <h2 class="text-center mb-4 text-dark" id="titulo-beneficios">¿Por qué Rueda Libre?</h2>
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <article class="card h-100 p-4 bg-light rounded">
+                        <h3 class="h5 text-success mb-3">
+                            Bicicletas revisadas
+                        </h3>
+                        <p class="text-secondary mb-3">
+                            Revisamos cada bicicleta antes de entregarla
+                            para que disfrutes tu recorrido con tranquilidad.
+                        </p>
+                        <p class="fw-bold text-success mb-0">
+                            Revisión en cada alquiler
+                        </p>
+                    </article>
+                </div>
+            
+                <div class="col">
+                    <article class=" card h-100 p-4 bg-light rounded">
+                        <h3 class="h5 text-success mb-3">
+                            Casco y candado incluidos
+                        </h3>
+                        <p class="text-secondary mb-3">
+                            Recibe los accesorios esenciales para disfrutar
+                            tu experiencia en bicicleta.
+                        </p>
+                        <p class="fw-bold text-success mb-0">
+                            Sin costo adicional
+                        </p>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100 p-4 bg-light rounded">
+                        <h3 class="h5 text-success mb-3">
+                            Guías certificados
+                        </h3>
+                        <p class="text-secondary mb-3">
+                            Descubre nuevos lugares con acompañamiento
+                            durante nuestros recorridos guiados.
+                        </p>
+                        <p class="fw-bold text-success mb-0">
+                            Recorridos guiados
+                        </p>
+                    </article>
+                </div>
+                <div class="col">
+                    <article class="card h-100 p-4 bg-light rounded">
+                        <h3 class="h5 text-success mb-3">
+                            Puntos de devolución
+                        </h3>
+                        <p class="text-secondary mb-3">
+                            Devuelve tu bicicleta en cualquiera de nuestras
+                            tres sedes habilitadas.
+                        </p>
+                        <p class="fw-bold text-success mb-0">
+                            Tres sedes
+                        </p>
+                    </article>
+                </div>
+            </div>    
         </section>
+            <a href="/paginas/tarifas.html">Ver tarifas</a>
 
         <section id="encuentranos">
             <header>
@@ -232,29 +286,162 @@
             </div>
             </section>
         </div>
-        <section class="rutas">
+        <section class="container my-5 rutas bg-white bg-opacity-75 p-4 rounded-3">
+
+        <header class="text-center mb-4">
             <h2>Nuestras rutas</h2>
+            <p>Descubre Medellín sobre dos ruedas.</p>
+        </header>
 
-            <div class="rutas-grid">
-                <article class="tarjeta-ruta">
-                    <img src="img/rutas-recorridos/ruta_rios_y_parques.jpg" alt="Ruta en bicicleta por Medellín">
-                    <h3>Ruta ríos y parques</h3>
-                    <p>Nivel fácil</p>
-                </article>
+        <div id="rutasCarousel"
+            class="carousel carousel-dark slide"
+            data-bs-ride="false">
 
-                <article class="tarjeta-ruta">
-                    <img src="img/rutas-recorridos/ruta_sabores_de_barrios.jpg" alt="Ruta en bicicleta por barrios de Medellín">
-                    <h3>Ruta sabores de barrios</h3>
-                    <p>Nivel medio</p>
-                </article>
+        
+            <div class="carousel-indicators">
 
-                <article class="tarjeta-ruta">
-                    <img src="img/rutas-recorridos/ruta_reto_las_palmas.jpg" alt="Ruta en bicicleta por caminos de montaña">
-                    <h3>Ruta reto las palmas</h3>
-                    <p>Nivel difícil</p>
-                </article>
+                <button type="button"
+                        data-bs-target="#rutasCarousel"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Ruta 1">
+                </button>
+
+                <button type="button"
+                        data-bs-target="#rutasCarousel"
+                        data-bs-slide-to="1"
+                        aria-label="Ruta 2">
+                </button>
+
+                <button type="button"
+                        data-bs-target="#rutasCarousel"
+                        data-bs-slide-to="2"
+                        aria-label="Ruta 3">
+                </button>
+
             </div>
-        </section>
+
+            
+            <div class="carousel-inner">
+
+                <!-- Ruta 1 -->
+                <div class="carousel-item active">
+
+                    <div class="row justify-content-center py-4">
+
+                        <div class="col-12 col-md-8 col-lg-6">
+
+                            <article class="tarjeta-ruta h-100">
+
+                                <img
+                                    src="img/rutas-recorridos/ruta_rios_y_parques.jpg"
+                                    alt="Ruta en bicicleta por Medellín"
+                                >
+
+                                <h3>Ruta ríos y parques</h3>
+
+                                <p class="nivel-ruta nivel-facil">
+                                    Nivel fácil
+                                </p>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="carousel-item">
+
+                    <div class="row justify-content-center py-4">
+
+                        <div class="col-12 col-md-8 col-lg-6">
+
+                            <article class="tarjeta-ruta h-100">
+
+                                <img
+                                    src="img/rutas-recorridos/ruta_sabores_de_barrios.jpg"
+                                    alt="Ruta en bicicleta por barrios de Medellín"
+                                >
+
+                                <h3>Ruta sabores de barrios</h3>
+
+                                <p class="nivel-ruta nivel-medio">
+                                    Nivel medio
+                                </p>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                
+                <div class="carousel-item">
+
+                    <div class="row justify-content-center py-4">
+
+                        <div class="col-12 col-md-8 col-lg-6">
+
+                            <article class="tarjeta-ruta h-100">
+
+                                <img
+                                    src="img/rutas-recorridos/ruta_reto_las_palmas.jpg"
+                                    alt="Ruta en bicicleta por caminos de montaña"
+                                >
+
+                                <h3>Ruta reto Las Palmas</h3>
+
+                                <p class="nivel-ruta nivel-dificil">
+                                    Nivel difícil
+                                </p>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#rutasCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">Anterior</span>
+
+            </button>
+
+            <!-- Control siguiente -->
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#rutasCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon"
+                    aria-hidden="true">
+                </span>
+
+                <span class="visually-hidden">Siguiente</span>
+
+            </button>
+
+        </div>
+
+    </section>
     </main>
     <footer>
         </p>    

@@ -13,17 +13,29 @@
     
 </head>
 <body>
-    <header class="encabezado">
-        <img src="img/logo.jpeg" alt="logo_de_rueda_libre" width="10%">
-        <h1>Rueda Libre | Alquiler de bicicletas en Medellín</h1>
-        <nav id="menu">
-            <ul class="listaMenu">
-                <li> <a href="index.html" class="activo">Inicio</a> </li>
-                <li> <a href="paginas/tarifas.html">Tarifas y rutas</a></li>
-                <li> <a href="paginas/reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header class="encabezado">  
+        <nav class="navbar navbar-expand-lg bg-body-tertiary" id="menuPrincipal">
+            <div class="container">
+                <img src="img/logo.jpeg" alt="logo_de_rueda_libre" width="10%">
+                <a class="navbar-brand" href="index.html">Rueda Libre | Alquiler de bicicletas en Medellín</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"> 
+                            <a href="index.html" class="nav-link active" aria-current="page">Inicio</a> 
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="paginas/tarifas.html" class="nav-link">Tarifas y rutas</a>
+                        </li>
+                        <li class="nav-item"> 
+                            <a href="paginas/reservas.html" class="nav-link">Reservas</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
     <main>
         <div class="container">
             <section class="portada row align-items-center g-4 py-5">

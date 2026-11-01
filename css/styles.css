@@ -1,8 +1,7 @@
 
-/* ==================================================
-   1. VARIABLES GLOBALES
-   Colores, tipografías y espaciado
-   ================================================== */
+/* =========================================================
+   1. VARIABLES DE MARCA Y BOOTSTRAP
+   ========================================================= */
 
 :root {
     /* Colores de marca */
@@ -12,11 +11,17 @@
     --color-crema: #FAF6EF;
     --color-gris-asfalto: #5B6470;
 
+    /* Colores complementarios */
+    --color-blanco: #FFFFFF;
+    --color-verde-oscuro: #155C3B;
+    --color-naranja-oscuro: #C8750B;
+    --color-borde: #D8D9D5;
+
     /* Tipografías */
     --font-heading: "Montserrat", Arial, sans-serif;
     --font-body: "Open Sans", Arial, sans-serif;
 
-    /* Escala de espaciado */
+    /* Espaciado */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -24,25 +29,26 @@
     --space-5: 1.5rem;
     --space-6: 2rem;
     --space-7: 3rem;
+
+    /* Bootstrap: colores y tipografía */
+    --bs-primary: var(--color-verde-ruta);
+    --bs-primary-rgb: 30, 122, 79;
+
+    --bs-body-color: var(--color-azul-noche);
+    --bs-body-bg: var(--color-crema);
+    --bs-body-font-family: var(--font-body);
+
+    --bs-link-color: var(--color-verde-ruta);
+    --bs-link-hover-color: var(--color-verde-oscuro);
+
+    --bs-border-color: var(--color-borde);
+    --bs-focus-ring-color: rgba(30, 122, 79, 0.25);
 }
 
 
-/* ==================================================
-   2. MODELO DE CAJA
-   Incluye padding y border en las dimensiones
-   ================================================== */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-
-/* ==================================================
-   3. ESTILOS GENERALES
-   Estilos base para móvil
-   ================================================== */
+/* =========================================================
+   2. ESTILOS GENERALES
+   ========================================================= */
 
 html {
     scroll-behavior: smooth;
@@ -50,11 +56,34 @@ html {
 
 body {
     margin: 0;
-    padding: var(--space-3);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
     font-family: var(--font-body);
-    background-color: var(--color-crema);
     color: var(--color-azul-noche);
-    line-height: 1.5;
+    background-color: var(--color-crema);
+    line-height: 1.6;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+    padding-inline: 1rem;
+}
+
+/* Tabletas */
+@media (min-width: 768px) {
+    main {
+        padding-inline: 2rem;
+    }
+}
+
+/* Escritorio */
+@media (min-width: 1200px) {
+    main {
+        padding-inline: 3rem;
+    }
 }
 
 h1,
@@ -64,20 +93,21 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
+    color: var(--color-azul-noche);
     line-height: 1.25;
+    font-weight: 700;
 }
 
-h1,
-h2,
-h3,
+h1 {
+    margin-bottom: var(--space-4);
+}
+
+h2 {
+    margin-bottom: var(--space-4);
+}
+
 p {
     overflow-wrap: break-word;
-}
-
-main {
-    width: 100%;
-    max-width: 70rem;
-    margin-inline: auto;
 }
 
 img {
@@ -90,311 +120,270 @@ a {
     overflow-wrap: anywhere;
 }
 
-a:focus-visible {
-    outline: 3px solid var(--color-azul-noche);
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--color-naranja-pedal);
     outline-offset: 3px;
 }
 
 
-/* ==================================================
-   4. ENCABEZADO Y NAVEGACIÓN
-   Móvil: nombre arriba y menú debajo
-   ================================================== */
+/* =========================================================
+   3. CONTENEDORES Y SECCIONES
+   ========================================================= */
 
-.encabezado {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
-    padding: var(--space-4);
-    background-color: var(--color-azul-noche);
+.seccion {
+    padding-block: var(--space-6);
+}
+
+.seccion-titulo {
+    margin-bottom: var(--space-2);
     text-align: center;
 }
 
-.encabezado h1 {
-    margin: 0;
-    color: #FFFFFF;
+.seccion-descripcion {
+    max-width: 48rem;
+    margin: 0 auto var(--space-5);
+    text-align: center;
+    color: var(--color-gris-asfalto);
 }
 
-#menu {
-    width: 100%;
+.fondo-crema {
+    background-color: var(--color-crema);
 }
 
-#menu .listaMenu {
+.fondo-blanco {
+    background-color: var(--color-blanco);
+}
+
+.fondo-verde {
+    background-color: var(--color-verde-ruta);
+    color: var(--color-blanco);
+}
+
+.fondo-azul {
+    background-color: var(--color-azul-noche);
+    color: var(--color-blanco);
+}
+
+
+/* =========================================================
+   4. HEADER Y NAVEGACIÓN
+   ========================================================= */
+
+.encabezado {
+    position: relative;
+    z-index: 100;
+}
+
+.encabezado .navbar {
+    padding-block: var(--space-3);
+    background-color: var(--color-azul-noche) !important;
+}
+
+.encabezado .container {
+    gap: var(--space-3);
+}
+
+.encabezado .navbar-brand {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: var(--space-3);
+
+    color: var(--color-blanco);
+    font-family: var(--font-heading);
+    font-weight: 700;
+    white-space: normal;
+}
+
+.encabezado .navbar-brand:hover {
+    color: var(--color-naranja-pedal);
+}
+
+.encabezado .navbar-brand img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.encabezado .navbar-nav {
+    align-items: center;
     gap: var(--space-2);
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
-#menu .listaMenu li {
-    padding: var(--space-2);
+.encabezado .nav-link {
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-blanco);
+    font-weight: 600;
+    border-radius: 0.4rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-#menu a {
-    color: #FFFFFF;
-    text-decoration: none;
+.encabezado .nav-link:hover,
+.encabezado .nav-link:focus-visible {
+    color: var(--color-naranja-pedal);
+    background-color: rgba(255, 255, 255, 0.08);
 }
 
-#menu a.activo {
+.encabezado .nav-link.active {
     color: var(--color-naranja-pedal);
     font-weight: 700;
 }
 
-#menu a:hover {
-    color: var(--color-naranja-pedal);
-    text-decoration: underline;
+.encabezado .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.6);
 }
 
-#menu a:focus-visible {
-    outline: 3px solid #FFFFFF;
-    outline-offset: 3px;
+.encabezado .navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+
+.encabezado .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(243, 154, 43, 0.4);
 }
 
 
-/* ==================================================
-   5. PORTADA
-   Móvil: texto e imagen en una columna
-   ================================================== */
+/* =========================================================
+   5. BOTONES DE MARCA
+   ========================================================= */
 
-/*.portada {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-4);
-    align-items: center;
-    padding-block: var(--space-5);
+/* Verde Ruta: acción principal */
+
+.btn-verde-ruta {
+    --bs-btn-color: #FFFFFF;
+    --bs-btn-bg: var(--color-verde-ruta);
+    --bs-btn-border-color: var(--color-verde-ruta);
+
+    --bs-btn-hover-color: #FFFFFF;
+    --bs-btn-hover-bg: var(--color-verde-oscuro);
+    --bs-btn-hover-border-color: var(--color-verde-oscuro);
+
+    --bs-btn-active-color: #FFFFFF;
+    --bs-btn-active-bg: #10482E;
+    --bs-btn-active-border-color: #10482E;
+
+    --bs-btn-disabled-color: #FFFFFF;
+    --bs-btn-disabled-bg: var(--color-verde-ruta);
+    --bs-btn-disabled-border-color: var(--color-verde-ruta);
+
+    --bs-btn-focus-shadow-rgb: 30, 122, 79;
 }
 
-.portada-texto {
-    min-width: 0;
-    align-self: center; 
-}
-*/
-.portada-texto h2 {
-    color: var(--color-azul-noche);
-}
-/*
-.portada-imagen {
-    min-width: 0;
+/* Naranja Pedal: acción destacada */
+
+.btn-naranja-pedal {
+    --bs-btn-color: var(--color-azul-noche);
+    --bs-btn-bg: var(--color-naranja-pedal);
+    --bs-btn-border-color: var(--color-naranja-pedal);
+
+    --bs-btn-hover-color: var(--color-azul-noche);
+    --bs-btn-hover-bg: #E58A1C;
+    --bs-btn-hover-border-color: #E58A1C;
+
+    --bs-btn-active-color: var(--color-azul-noche);
+    --bs-btn-active-bg: #D77A0C;
+    --bs-btn-active-border-color: #D77A0C;
+
+    --bs-btn-disabled-color: var(--color-azul-noche);
+    --bs-btn-disabled-bg: var(--color-naranja-pedal);
+    --bs-btn-disabled-border-color: var(--color-naranja-pedal);
+
+    --bs-btn-focus-shadow-rgb: 243, 154, 43;
 }
 
-.portada-imagen img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+/* Estilo compartido para acciones */
+.btn-verde-ruta,
+.btn-naranja-pedal {
+    font-weight: 700;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
-*/
 
-/* ==================================================
-   6. TARJETAS DE SERVICIOS
-   ================================================== */
+.btn-verde-ruta:hover,
+.btn-naranja-pedal:hover {
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   6. TARJETAS REUTILIZABLES
+   ========================================================= */
 
 .tarjeta {
-    min-width: 0;
+    height: 100%;
     padding: var(--space-4);
-    margin-bottom: var(--space-4);
-    border: 1px solid var(--color-gris-asfalto);
+    border: 1px solid var(--color-borde);
     border-radius: 1rem;
-    background-color: #FFFFFF;
+    background-color: var(--color-blanco);
+    box-shadow: 0 2px 8px rgba(20, 33, 61, 0.06);
 }
 
 .tarjeta img {
     width: 100%;
-    height: auto;
+    border-radius: 0.6rem;
+    object-fit: cover;
 }
-
-/* Tarjeta de bicicletas eléctricas */
 
 .tarjeta-electrica {
     position: relative;
 }
-
-/* Etiqueta de novedad */
 
 .etiqueta-nuevo {
     position: absolute;
     top: var(--space-3);
     right: var(--space-3);
     padding: var(--space-1) var(--space-3);
-    border-radius: 0.5rem;
+
+    color: var(--color-blanco);
     background-color: var(--color-verde-ruta);
-    color: #FFFFFF;
-    font-weight: 600;
-}
 
-
-/* ==================================================
-   7. BOTONES Y ENLACES DE ACCIÓN
-   ================================================== */
-
-button,
-.boton-accion {
-    padding: var(--space-2) var(--space-4);
-    background-color: var(--color-verde-ruta);
-    color: #FFFFFF;
-    font: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-.boton-accion {
-    display: inline-block;
-    padding: var(--space-3) var(--space-5);
-    border-radius: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.boton-accion:hover,
-button:hover {
-    background-color: var(--color-azul-noche);
-    color: #FFFFFF;
-}
-
-button:focus-visible,
-.boton-accion:focus-visible {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 3px;
-}
-
-
-/* ==================================================
-   8. TABLAS
-   Estilos base legibles en móvil
-   ================================================== */
-
-table {
-    width: 100%;
-    margin-bottom: var(--space-4);
-    border: 1px solid var(--color-gris-asfalto);
-    border-collapse: collapse;
-    background-color: #FFFFFF;
-    font-size: 0.75rem;
-    table-layout: fixed;
-}
-
-caption {
-    padding: var(--space-2);
-    margin-bottom: var(--space-2);
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    text-align: center;
-    background-color: var(--color-naranja-pedal);
-    color: var(--color-azul-noche);
-    border: 1px solid var(--color-gris-asfalto);
     border-radius: 0.5rem;
-    caption-side: top;
 }
 
-th,
-td {
-    padding: var(--space-1);
-    text-align: left;
-    vertical-align: top;
-    overflow-wrap: anywhere;
-    border-bottom: 1px solid #D5D5D5;
-}
-
-th {
-    background-color: var(--color-azul-noche);
-    color: #FFFFFF;
-    font-weight: 700;
-}
-
-
-/* ==================================================
-   9. FORMULARIOS
-   ================================================== */
-
-form fieldset {
-    min-width: 0;
-    margin-bottom: var(--space-5);
-    padding: var(--space-4);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 10px;
-}
-
-form label {
-    display: block;
-    margin-bottom: var(--space-1);
-}
-
-form input:not([type="radio"]):not([type="checkbox"]),
-form select,
-form textarea {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-    margin-bottom: var(--space-4);
-    padding: var(--space-3);
-    font: inherit;
-}
-
-form textarea {
-    resize: vertical;
-}
-
-form input:focus-visible,
-form select:focus-visible,
-form textarea:focus-visible {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 3px;
-}
-
-/* Fila de campos relacionados */
-
-.campos-fila {
+.tarjeta-ruta,
+.tarjeta-bicicleta {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
-    min-width: 0;
-}
-
-.campos-fila .campo {
-    flex: 1 1 0;
-    min-width: 0;
-}
-
-
-/* ==================================================
-   10. GALERÍA DE RUTAS
-   Móvil: una tarjeta por fila
-   ================================================== */
-
-.rutas-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-5);
-}
-
-.tarjeta-ruta {
-    display: flex;
-    flex-direction: column;
+    height: 100%;
     min-width: 0;
     padding: var(--space-4);
-    border: 1px solid #DDDDDD;
-    border-radius: 12px;
-    background-color: #FFFFFF;
+
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.8rem;
+    box-shadow: 0 2px 8px rgba(20, 33, 61, 0.06);
 }
 
 .tarjeta-ruta img {
     width: 100%;
-    height: 180px;
+    height: 12rem;
     object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
+    border-radius: 0.5rem;
 }
 
-.tarjeta-ruta h3 {
+.tarjeta-bicicleta img {
+    width: 100%;
+    height: 10rem;
+    object-fit: contain;
+}
+
+.tarjeta-ruta h3,
+.tarjeta-bicicleta h3 {
+    margin-top: var(--space-3);
     color: var(--color-azul-noche);
+}
+
+.tarjeta-bicicleta .precio {
+    color: var(--color-verde-ruta);
+    font-weight: 700;
+}
+
+.tarjeta-ruta .btn,
+.tarjeta-bicicleta .btn {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .nivel-ruta {
@@ -414,301 +403,290 @@ form textarea:focus-visible {
 }
 
 
-/* ==================================================
-   11. FLOTA DE BICICLETAS
-   Móvil: columnas según el espacio disponible
-   ================================================== */
+/* =========================================================
+   7. PORTADA DE INICIO
+   ========================================================= */
 
-/*.flota-grid {
-    display: grid;
-    grid-template-columns: repeat(
-        auto-fit,
-        minmax(min(100%, 220px), 1fr)
-    );
-    gap: var(--space-4); 
+.portada {
+    padding-block: var(--space-7);
 }
-*/
-.tarjeta-bicicleta {
+
+.portada-texto {
     display: flex;
     flex-direction: column;
-    min-width: 0;
-    padding: var(--space-4);
-    border: 1px solid #DDDDDD;
-    border-radius: 12px;
-    background-color: #FFFFFF;
+    justify-content: center;
 }
 
-.tarjeta-bicicleta img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: 150px;
-    object-fit: contain;
-    object-position: center;
-    background-color: #FFFFFF;
-    border-radius: 8px;
-}
-
-.tarjeta-bicicleta h3 {
+.portada-texto h1,
+.portada-texto h2 {
     color: var(--color-azul-noche);
-    margin-bottom: var(--space-2);
 }
 
-.tarjeta-bicicleta p {
-    line-height: 1.5;
+.portada-imagen img {
+    width: 100%;
+    max-height: 28rem;
+    object-fit: cover;
+    border-radius: 1rem;
 }
 
-.tarjeta-bicicleta .precio {
-    font-weight: 700;
-    color: var(--color-verde-ruta);
+
+/* =========================================================
+   8. TABLAS Y TARIFAS
+   ========================================================= */
+
+.table {
+    --bs-table-bg: var(--color-blanco);
+    --bs-table-color: var(--color-azul-noche);
+    border-color: var(--color-borde);
 }
 
-.tarjeta-bicicleta a {
-    display: block;
-    margin-top: auto;
-    padding: var(--space-2) var(--space-3);
-    background-color: var(--color-verde-ruta);
-    color: #FFFFFF;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 6px;
-}
-
-.tarjeta-bicicleta a:hover,
-.tarjeta-bicicleta a:focus-visible {
+.table thead th {
+    color: var(--color-blanco);
     background-color: var(--color-azul-noche);
-    color: #FFFFFF;
-    text-decoration: underline;
+    vertical-align: middle;
 }
 
-
-/* ==================================================
-   12. PÁGINA DE RESERVAS
-   Móvil: formulario y contacto apilados
-   ================================================== */
-/*
-.reservas-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: var(--space-5);
-    align-items: start;
+.table caption {
+    color: var(--color-azul-noche);
+    font-weight: 700;
+    text-align: center;
 }
 
-.formulario_reserva,
-.informacion_contacto {
-    min-width: 0;
+.tarifas-incluye {
+    height: 100%;
     padding: var(--space-4);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 12px;
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.8rem;
 }
-*/
+
+
+/* =========================================================
+   9. FORMULARIOS Y RESERVAS
+   ========================================================= */
+
+#formulario_reserva {
+    min-width: 0;
+}
+
+#formulario_reserva fieldset {
+    min-width: 0;
+    margin-bottom: var(--space-5);
+    padding: var(--space-4);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.8rem;
+    background-color: var(--color-blanco);
+}
+
+#formulario_reserva legend {
+    float: none;
+    width: auto;
+    padding-inline: var(--space-2);
+    color: var(--color-azul-noche);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+#formulario_reserva .form-label {
+    font-weight: 600;
+}
+
+#formulario_reserva .form-control:focus,
+#formulario_reserva .form-select:focus,
+#formulario_reserva .form-check-input:focus {
+    border-color: var(--color-verde-ruta);
+    box-shadow: 0 0 0 0.2rem rgba(30, 122, 79, 0.2);
+}
+
+#formulario_reserva .form-check-label {
+    cursor: pointer;
+}
+
+#formulario_reserva .form-check-input:checked {
+    background-color: var(--color-verde-ruta);
+    border-color: var(--color-verde-ruta);
+}
+
+#formulario_reserva .form-text {
+    color: var(--color-gris-asfalto);
+}
+
 .informacion_contacto {
-    background-color: #FFFFFF;
+    height: 100%;
+    padding: var(--space-4);
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 0.8rem;
 }
 
 .informacion_contacto h3 {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-4);
     text-align: center;
 }
 
 .informacion_contacto dl {
+    margin-bottom: var(--space-4);
+}
+
+.informacion_contacto dt {
+    font-weight: 700;
+}
+
+.informacion_contacto dd {
+    margin-bottom: var(--space-3);
+    color: var(--color-gris-asfalto);
+}
+
+
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+
+.site-footer {
+    margin-top: var(--space-7);
+    padding: var(--space-6) 0 var(--space-4);
+    color: var(--color-blanco);
+    background-color: var(--color-azul-noche);
+}
+
+.site-footer h2,
+.site-footer h3,
+.site-footer h4 {
+    color: var(--color-blanco);
+}
+
+.site-footer a {
+    color: var(--color-blanco);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--color-naranja-pedal);
+    text-decoration: underline;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.logo-footer {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.footer-links,
+.footer-contact {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-2);
-    overflow-wrap: anywhere;
+}
+
+.footer-bottom {
+    padding-top: var(--space-4);
+    margin-top: var(--space-5);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    text-align: center;
+    font-size: 0.875rem;
 }
 
 
-/* ==================================================
-   13. BLOQUE DE INFORMACIÓN DE TARIFAS
-   ================================================== */
-
-.tarifas-incluye {
-    min-width: 0;
-    padding: var(--space-4);
-    border: 1px solid var(--color-gris-asfalto);
-    border-radius: 12px;
-    background-color: #FFFFFF;
-}
-
-
-/* ==================================================
-   14. PIE DE PÁGINA
-   Móvil: elementos apilados
-   ================================================== */
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-4);
-    padding: var(--space-4);
-    color: #FFFFFF;
-    background-color: var(--color-azul-noche);
-}
-
-.logo-footer {
-    width: 100px;
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* ==================================================
-   15. BOTÓN FLOTANTE DE WHATSAPP
-   ================================================== */
+/* =========================================================
+   11. WHATSAPP FLOTANTE
+   ========================================================= */
 
 .whatsapp-flotante {
     position: fixed;
-    right: var(--space-3);
-    bottom: var(--space-3);
-    z-index: 1000;
+    right: var(--space-4);
+    bottom: var(--space-4);
+    z-index: 1050;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
     padding: var(--space-3) var(--space-4);
-    border-radius: 2rem;
+    color: var(--color-blanco);
     background-color: var(--color-verde-ruta);
-    color: #FFFFFF;
-    font-weight: 600;
+
+    border-radius: 2rem;
+    font-weight: 700;
     text-decoration: none;
+    box-shadow: 0 3px 10px rgba(20, 33, 61, 0.2);
+
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .whatsapp-flotante:hover {
-    background-color: var(--color-azul-noche);
-    color: #FFFFFF;
+    color: var(--color-blanco);
+    background-color: var(--color-verde-oscuro);
     transform: translateY(-2px);
 }
 
-.whatsapp-flotante:focus-visible {
-    outline: 3px solid var(--color-azul-noche);
-    outline-offset: 3px;
+
+/* =========================================================
+   12. RESPONSIVE
+   ========================================================= */
+
+/* Móviles pequeños */
+@media (max-width: 575.98px) {
+
+    .encabezado .navbar-brand {
+        max-width: 75%;
+        font-size: 0.95rem;
+    }
+
+    .encabezado .navbar-brand img {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .seccion {
+        padding-block: var(--space-5);
+    }
+
+    .portada {
+        padding-block: var(--space-5);
+    }
+
+    .whatsapp-flotante {
+        right: var(--space-2);
+        bottom: var(--space-2);
+        padding: var(--space-2) var(--space-3);
+        font-size: 0.875rem;
+    }
 }
 
 
-/* ==================================================
-   16. TABLETA
-   Desde 768 px
-   ================================================== */
-
+/* Tabletas y pantallas pequeñas */
 @media (min-width: 768px) {
 
-    /* Encabezado y navegación */
-
-    .encabezado {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+    .seccion {
+        padding-block: var(--space-7);
     }
-
-    #menu {
-        width: auto;
-    }
-
-    #menu .listaMenu {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-    }
-
-    /* Portada
 
     .portada {
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-        gap: var(--space-6);
-    }
-    */
-    /* Galería: tres tarjetas en una fila */
-
-    .rutas-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        padding-block: var(--space-7);
     }
 
-    .tarjeta-ruta img {
-        height: 160px;
+    .site-footer {
+        padding-top: var(--space-7);
     }
 
-    /* Reservas: proporción 2:1 */
-
-    .reservas-layout {
-        grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
-    }
-
-    .formulario_reserva,
-    .informacion_contacto {
-        padding: var(--space-4);
-    }
-
-    /* Dos campos cortos en la misma fila */
-
-    .campos-fila {
-        flex-direction: row;
-        gap: var(--space-4);
-    }
-
-    /* Pie de página */
-
-    footer {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-
-    /* Tablas */
-
-    table {
-        font-size: 0.9rem;
-    }
-
-    th,
-    td {
-        padding: var(--space-2);
-    }
 }
 
 
-/* ==================================================
-   17. ESCRITORIO
-   Desde 1200 px
-   ================================================== */
-
+/* Escritorio */
 @media (min-width: 1200px) {
 
-    body {
-        padding: var(--space-4);
+    .portada-imagen img {
+        max-height: 32rem;
     }
 
-    main {
-        width: 90%;
-    }
-/*
-    .portada {
-        gap: var(--space-7);
-    }
-*/
-    .rutas-grid {
-        gap: var(--space-5);
-    }
-
-    .tarjeta-ruta img {
-        height: 200px;
-    }
-
-    .formulario_reserva,
-    .informacion_contacto {
-        padding: var(--space-5);
-    }
-
-    .campos-fila {
-        gap: var(--space-4);
-    }
-
-    table {
-        font-size: 1rem;
-    }
-
-    th,
-    td {
-        padding: var(--space-3);
-    }
 }
-
